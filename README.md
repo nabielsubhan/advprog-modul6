@@ -1,8 +1,8 @@
 # Module 6 Reflection Notes
 
-**Nama      : Muhammad Nabiel Subhan**
-**NPM       : 2206081553**
-**Kelas     : AdPro-B**
+**Nama      : Muhammad Nabiel Subhan**</br>
+**NPM       : 2206081553**</br>
+**Kelas     : AdPro-B**</br>
 
 ## Commit 1 Reflection Notes
 
