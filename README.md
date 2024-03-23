@@ -72,3 +72,7 @@ fn handle_connection(mut stream: TcpStream) {
 }
 ```
 Dengan begitu, kita sudah mengubahnya dengan menghilangkan duplikasi kode tanpa mengubah *functionality* asli dari function tersebut.
+
+## Commit 4 Reflection Notes
+
+Pada function `handle_connection`, sekarang kita menambahkan simulasi *slow request* untuk melihat bagaimana cara server kita bekerja, yaitu dengan mengubah *block* `if else` menjadi menggunakan `match` dan menambahkan kondisi baru ketika terdapat `request_line` berupa `GET /sleep` yang akan membuat server "sleep" selama 5 detik. Hal tersebut akan mengakibatkan jika terdapat client yang mengakses `http://127.0.0.1:7878/sleep`, akan membuat server tertidur selama 5 detik sehingga client lain yang ingin mencoba mengakses `http://127.0.0.1:7878/` perlu menunggu selama 5 detik terlebih dahulu. Hal tersebut terjadi karena server kita yang sekarang masih berjalan dengan konsep *single threaded* sehingga setiap request hanya bisa diproses oleh satu *thread* saja yang mengakibatkan proses yang lain perlu mengantri untuk dieksekusi.
